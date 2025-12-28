@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syam Kumar | Flutter Developer</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- BACKGROUND ELEMENTS -->
+  <div class="bg-system">
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+    <div class="gradient-blob blob-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <div class="logo-icon">
+          <i class='bx bxl-flutter'></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-primary">Syam</span>
+          <span class="logo-accent">Kumar</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="nav-links">
+          <a href="#home" class="nav-link active" data-link="home">
+            <span class="nav-number">01</span>
+            <span class="nav-text">Home</span>
+            <div class="nav-indicator"></div>
+          </a>
+          <a href="#about" class="nav-link" data-link="about">
+            <span class="nav-number">02</span>
+            <span class="nav-text">About</span>
+            <div class="nav-indicator"></div>
+          </a>
+          <a href="#projects" class="nav-link" data-link="projects">
+            <span class="nav-number">03</span>
+            <span class="nav-text">Projects</span>
+            <div class="nav-indicator"></div>
+          </a>
+          <a href="#skills" class="nav-link" data-link="skills">
+            <span class="nav-number">04</span>
+            <span class="nav-text">Skills</span>
+            <div class="nav-indicator"></div>
+          </a>
+          <a href="#contact" class="nav-link" data-link="contact">
+            <span class="nav-number">05</span>
+            <span class="nav-text">Contact</span>
+            <div class="nav-indicator"></div>
+          </a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn-download" id="downloadResume">
+          <i class='bx bx-download'></i>
+          <span class="btn-text">Resume</span>
+        </a>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <div class="theme-icon">
+            <i class='bx bx-sun'></i>
+            <i class='bx bx-moon'></i>
+          </div>
+        </button>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class='bx bxl-flutter'></i>
+          </div>
+          <div class="logo-text">
+            <span class="logo-primary">Syam</span>
+            <span class="logo-accent">Kumar</span>
+          </div>
+        </div>
+        <button class="close-menu" id="closeMenu">
+          <i class='bx bx-x'></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="#home" class="mobile-nav-link active" data-link="home">
+          <span class="link-number">01</span>
+          <span class="link-text">Home</span>
+          <i class='bx bx-chevron-right'></i>
+        </a>
+        <a href="#about" class="mobile-nav-link" data-link="about">
+          <span class="link-number">02</span>
+          <span class="link-text">About</span>
+          <i class='bx bx-chevron-right'></i>
+        </a>
+        <a href="#projects" class="mobile-nav-link" data-link="projects">
+          <span class="link-number">03</span>
+          <span class="link-text">Projects</span>
+          <i class='bx bx-chevron-right'></i>
+        </a>
+        <a href="#skills" class="mobile-nav-link" data-link="skills">
+          <span class="link-number">04</span>
+          <span class="link-text">Skills</span>
+          <i class='bx bx-chevron-right'></i>
+        </a>
+        <a href="#contact" class="mobile-nav-link" data-link="contact">
+          <span class="link-number">05</span>
+          <span class="link-text">Contact</span>
+          <i class='bx bx-chevron-right'></i>
+        </a>
+      </div>
+      <div class="mobile-nav-footer">
+        <a class="btn-mobile-download" id="downloadResumeMobile">
+          <i class='bx bx-download'></i>
+          Download Resume
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
+          <div class="hero-badge">
+            <div class="badge-dot"></div>
+            <span>Flutter Developer</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="title-line">
+              <span class="text-gradient">Building</span> digital
+            </span>
+            <span class="title-line">
+              experiences that
+            </span>
+            <span class="title-line">
+              <span class="typed-text"></span>
+              <span class="cursor">|</span>
+            </span>
+          </h1>
+
+          <p class="hero-description">
+            I create beautiful, performant mobile applications using Flutter.
+            With a focus on clean architecture and user-centric design, I transform
+            ideas into scalable digital solutions.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary" data-aos="fade-up" data-aos-delay="200">
+              <span>Explore Work</span>
+              <i class='bx bx-chevron-right'></i>
+            </a>
+            <a href="#contact" class="btn-outline" data-aos="fade-up" data-aos-delay="300">
+              <span>Let's Connect</span>
+              <i class='bx bx-message-dots'></i>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat" data-aos="fade-up" data-aos-delay="400">
+              <div class="stat-number">2+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat" data-aos="fade-up" data-aos-delay="450">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat" data-aos="fade-up" data-aos-delay="500">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="600">
+          <div class="floating-card">
+            <div class="card-content">
+              <div class="card-header">
+                <div class="avatar">
+                  <img src="assets/images/my_profile.png" alt="Syam Kumar">
+                </div>
+                <div class="card-title">
+                  <h3>Syam Kumar S</h3>
+                  <p>Flutter Developer</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="tech-stack">
+                  <div class="tech-item">
+                    <i class='bx bxl-flutter'></i>
+                    <span>Flutter</span>
+                  </div>
+                  <div class="tech-item">
+                    <i class='bx bxl-dart'></i>
+                    <span>Dart</span>
+                  </div>
+                  <div class="tech-item">
+                    <i class='bx bxl-firebase'></i>
+                    <span>Firebase</span>
+                  </div>
+                  <div class="tech-item">
+                    <i class='bx bx-code'></i>
+                    <span>Clean Arch</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-glow"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <span>Scroll down</span>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">
+            <span class="title-number">01</span>
+            About Me
+          </h2>
+          <p class="section-subtitle">Get to know the person behind the code</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image" data-aos="fade-right">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Syam Kumar">
+              <div class="image-border"></div>
+              <div class="image-glow"></div>
+            </div>
+          </div>
+
+          <div class="about-content" data-aos="fade-left">
+            <div class="about-intro">
+              <h3>Passionate Developer, Creative Thinker</h3>
+              <p>
+                I'm a Flutter developer with over 2 years of experience building
+                cross-platform applications. My passion lies in creating elegant
+                solutions to complex problems through code.
+              </p>
+            </div>
+
+            <div class="about-features">
+              <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                  <i class='bx bx-code-alt'></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Clean Code</h4>
+                  <p>Following best practices with SOLID principles</p>
+                </div>
+              </div>
+
+              <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                  <i class='bx bx-layer'></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Modern Architecture</h4>
+                  <p>Expertise in BLoC, Riverpod, and Clean Architecture</p>
+                </div>
+              </div>
+
+              <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                  <i class='bx bx-rocket'></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Performance Focused</h4>
+                  <p>Optimizing apps for speed and efficiency</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-cta" data-aos="fade-up" data-aos-delay="400">
+              <a href="#contact" class="btn-primary">
+                <span>Let's Work Together</span>
+                <i class='bx bx-right-arrow-alt'></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">
+            <span class="title-number">02</span>
+            Featured Projects
+          </h2>
+          <p class="section-subtitle">Showcasing my best work</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <div class="image-wrapper">
+                <img src="assets/images/shop_ease_project.png" alt="ShopEase - Home Essentials App">
+              </div>
+
+              <div class="project-overlay">
+                <div class="project-links">
+                  <!-- App / Demo link -->
+                  <a href="#" class="project-link" aria-label="Live App">
+                    <i class='bx bx-link-external'></i>
+                  </a>
+
+                  <!-- GitHub repo -->
+                  <a href="#" class="project-link" aria-label="GitHub Repository">
+                    <i class='bx bxl-github'></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-date">2025</span>
+                <span class="project-category">E-commerce App</span>
+              </div>
+
+              <h3 class="project-title">ShopEase</h3>
+
+              <p class="project-description">
+                A modern home essentials and daily needs shopping app that allows users
+                to browse products, add to cart, place orders, and manage deliveries
+                with a smooth and intuitive mobile experience.
+              </p>
+
+              <div class="project-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Provider</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Project 2 -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <div class="image-wrapper">
+                <img src="assets/images/quickfix_project.png" alt="QuickFix - Home Services App">
+              </div>
+
+              <div class="project-overlay">
+                <div class="project-links">
+                  <!-- App / Demo link -->
+                  <a href="#" class="project-link" aria-label="Live App">
+                    <i class='bx bx-link-external'></i>
+                  </a>
+
+                  <!-- GitHub repo -->
+                  <a href="#" class="project-link" aria-label="GitHub Repository">
+                    <i class='bx bxl-github'></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-date">2024</span>
+                <span class="project-category">Home Services</span>
+              </div>
+
+              <h3 class="project-title">QuickFix</h3>
+
+              <p class="project-description">
+                An on-demand home service mobile app that connects users with trusted
+                professionals for plumbing, electrical work, cleaning, appliance repair,
+                and other household services—all from a single platform.
+              </p>
+
+              <div class="project-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Provider</span>
+                <span class="tech-tag">Google Maps</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Project 3 -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-image">
+              <div class="image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Finance App">
+              </div>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link">
+                    <i class='bx bx-link-external'></i>
+                  </a>
+                  <a href="#" class="project-link">
+                    <i class='bx bxl-github'></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-date">2023</span>
+                <span class="project-category">Finance</span>
+              </div>
+              <h3 class="project-title">Smart Finance Dashboard</h3>
+              <p class="project-description">
+                Advanced financial management app with expense tracking, budgeting, and investment analytics.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Clean Arch</span>
+                <span class="tech-tag">Charts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-footer" data-aos="fade-up">
+          <a href="#" class="btn-outline">
+            <span>View All Projects</span>
+            <i class='bx bx-chevron-right'></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">
+            <span class="title-number">03</span>
+            Skills & Expertise
+          </h2>
+          <p class="section-subtitle">My technical toolkit</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class='bx bxl-flutter'></i>
+              </div>
+              <h3>Flutter Development</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Dart Programming</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="95"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">State Management</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="92"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">UI/UX Implementation</span>
+                  <span class="skill-percent">88%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="88"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class='bx bx-server'></i>
+              </div>
+              <h3>Backend & Database</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Firebase</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">REST APIs</span>
+                  <span class="skill-percent">94%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="94"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">SQL</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="85"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class='bx bx-cog'></i>
+              </div>
+              <h3>Tools & Practices</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Git & GitHub</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="92"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">CI/CD</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Testing</span>
+                  <span class="skill-percent">87%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="87"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">
+            <span class="title-number">04</span>
+            Get In Touch
+          </h2>
+          <p class="section-subtitle">Let's create something amazing together</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info" data-aos="fade-right">
+            <div class="contact-card">
+              <h3>Ready to start your project?</h3>
+              <p>
+                I'm currently available for freelance work and full-time opportunities.
+                Let's discuss how we can work together to bring your ideas to life.
+              </p>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class='bx bx-envelope'></i>
+                  </div>
+                  <div>
+                    <h4>Email</h4>
+                    <a href="mailto:syam@example.com">syamthecreator@gmail.com</a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class='bx bx-phone'></i>
+                  </div>
+                  <div>
+                    <h4>Phone</h4>
+                    <a href="tel:+919876543210">+91 8137922114</a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class='bx bx-map'></i>
+                  </div>
+                  <div>
+                    <h4>Location</h4>
+                    <span>Trivandrum, Kerala, India</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-connect">
+                <h4>Connect with me</h4>
+                <div class="social-links">
+                  <a href="#" class="social-link" aria-label="GitHub">
+                    <i class='bx bxl-github'></i>
+                  </a>
+                  <a href="#" class="social-link" aria-label="LinkedIn">
+                    <i class='bx bxl-linkedin'></i>
+                  </a>
+                  <a href="#" class="social-link" aria-label="Twitter">
+                    <i class='bx bxl-twitter'></i>
+                  </a>
+                  <a href="#" class="social-link" aria-label="Instagram">
+                    <i class='bx bxl-instagram'></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form" data-aos="fade-left">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required placeholder="Project or inquiry subject">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Tell me about your project..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                <span>Send Message</span>
+                <i class='bx bx-send'></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo">
+            <div class="logo-icon">
+              <i class='bx bxl-flutter'></i>
+            </div>
+            <div class="logo-text">
+              <span class="logo-primary">Syam</span>
+              <span class="logo-accent">Kumar</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Building the future, one app at a time</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <div class="footer-social">
+            <a href="https://github.com/syamthecreator" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class='bx bxl-github'></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/syamthecreator" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn">
+              <i class='bx bxl-linkedin'></i>
+            </a>
+
+            <a href="#" aria-label="Twitter">
+              <i class='bx bxl-twitter'></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Syam Kumar S. All rights reserved.</p>
+        <p>Designed with care <i class='bx bx-palette'></i> Built for performance <i class='bx bx-bolt-circle'></i></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class='bx bx-chevron-up'></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

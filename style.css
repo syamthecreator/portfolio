@@ -474,6 +474,7 @@ body.light .bx-moon {
   bottom: 50%;
   transform: translateY(50%) rotate(-45deg);
 }
+
 /* ================= MOBILE NAVIGATION ================= */
 .mobile-nav {
   position: fixed;
@@ -498,6 +499,7 @@ body.light .bx-moon {
   padding: 24px;
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* 🔥 Prevent content overflow */
 }
 
 .mobile-nav-header {
@@ -506,7 +508,7 @@ body.light .bx-moon {
   justify-content: space-between;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
-  flex-shrink: 0; /* 🔥 Keep header fixed */
+  flex-shrink: 0; /* 🔥 Don't shrink */
 }
 
 .close-menu {
@@ -529,14 +531,15 @@ body.light .bx-moon {
   color: white;
 }
 
+/* 🔥 Fixed height for links to ensure button is visible */
 .mobile-nav-links {
-  flex: 0 1 auto; /* 🔥 Changed from flex: 1 */
-  padding: 30px 0 20px 0; /* 🔥 Reduced bottom padding */
+  flex: 0 0 auto; /* 🔥 Don't grow or shrink */
+  max-height: 60vh; /* 🔥 Limit height */
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  overflow-y: auto; /* 🔥 Allow scrolling only if needed */
-  max-height: 60vh; /* 🔥 Limit height */
+  overflow-y: auto; /* 🔥 Scroll only links if needed */
 }
 
 .mobile-nav-link {
@@ -549,6 +552,7 @@ body.light .bx-moon {
   border-radius: var(--radius-md);
   transition: var(--transition);
   border: 1px solid transparent;
+  flex-shrink: 0; /* 🔥 Don't shrink links */
 }
 
 .mobile-nav-link:hover,
@@ -579,11 +583,12 @@ body.light .bx-moon {
   transform: translateX(4px);
 }
 
+/* 🔥 Footer pushed to bottom, always visible */
 .mobile-nav-footer {
-  flex-shrink: 0; /* 🔥 Keep footer at bottom */
+  margin-top: auto; /* 🔥 Push to bottom */
   padding-top: 20px;
   border-top: 1px solid var(--border);
-  margin-top: auto; /* 🔥 Push to bottom */
+  flex-shrink: 0; /* 🔥 Don't shrink */
 }
 
 .btn-mobile-download {
@@ -606,23 +611,48 @@ body.light .bx-moon {
   box-shadow: var(--shadow-md);
 }
 
-/* 🔥 Adjust for smaller screens */
+/* 🔥 Custom scrollbar for links */
+.mobile-nav-links::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-nav-links::-webkit-scrollbar-track {
+  background: var(--surface-light);
+  border-radius: 10px;
+}
+
+.mobile-nav-links::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+/* 🔥 Responsive adjustments */
 @media (max-height: 700px) {
   .mobile-nav-links {
     max-height: 50vh;
-    padding: 20px 0 15px 0;
   }
 }
 
 @media (max-height: 600px) {
   .mobile-nav-links {
     max-height: 45vh;
-    padding: 15px 0 10px 0;
+  }
+}
+
+@media (max-height: 500px) {
+  .mobile-nav-links {
+    max-height: 40vh;
+    padding: 15px 0;
     gap: 6px;
   }
   
   .mobile-nav-link {
     padding: 14px 18px;
+    font-size: 15px;
+  }
+  
+  .link-number {
+    font-size: 13px;
   }
 }
 

@@ -149,7 +149,7 @@ function animateSkillBars() {
   skillBars.forEach(bar => {
     const rect = bar.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    
+
     if (rect.top <= windowHeight - 100) {
       const width = bar.getAttribute('data-width');
       bar.style.width = `${width}%`;
@@ -176,25 +176,33 @@ const observer = new IntersectionObserver((entries) => {
 
 skillBars.forEach(bar => observer.observe(bar));
 
-// Form Submission
+// Form Submission with EmailJS (FINAL)
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Show success message
-    showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-    
-    // Reset form
-    contactForm.reset();
-    
-    // Here you would typically send the data to a server
-    console.log('Form data:', data);
+
+    emailjs.sendForm(
+      'syamthecreator@08',
+      'template_o9jxg5f',
+      contactForm
+    )
+    .then(() => {
+      showNotification(
+        "Message sent successfully! I'll get back to you soon.",
+        "success"
+      );
+      contactForm.reset();
+    })
+    .catch((error) => {
+      showNotification(
+        "Failed to send message. Please try again later.",
+        "error"
+      );
+      console.error("EmailJS Error:", error);
+    });
   });
 }
+
 
 // Notification System
 function showNotification(message, type = 'info') {
@@ -206,9 +214,9 @@ function showNotification(message, type = 'info') {
       <span>${message}</span>
     </div>
   `;
-  
+
   document.body.appendChild(notification);
-  
+
   // Add styles for notification
   const style = document.createElement('style');
   style.textContent = `
@@ -264,9 +272,9 @@ function showNotification(message, type = 'info') {
       }
     }
   `;
-  
+
   document.head.appendChild(style);
-  
+
   // Remove notification after animation
   setTimeout(() => {
     notification.remove();
@@ -278,15 +286,15 @@ function showNotification(message, type = 'info') {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    
+
     const targetId = this.getAttribute('href');
     if (targetId === '#') return;
-    
+
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
       const headerHeight = document.querySelector('.header').offsetHeight;
       const targetPosition = targetElement.offsetTop - headerHeight;
-      
+
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
@@ -299,7 +307,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
   const blobs = document.querySelectorAll('.gradient-blob');
-  
+
   blobs.forEach((blob, index) => {
     const speed = 0.2 + (index * 0.1);
     const yPos = -(scrolled * speed);
@@ -312,15 +320,50 @@ document.addEventListener('DOMContentLoaded', () => {
   updateActiveLink();
   toggleBackToTop();
   animateSkillBars();
-  
+
   // Add loading animation
   document.body.style.opacity = '0';
   document.body.style.transition = 'opacity 0.5s ease';
-  
+
   setTimeout(() => {
     document.body.style.opacity = '1';
   }, 100);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const projects = document.querySelectorAll(".project-item");
+  const toggleBtn = document.getElementById("toggleProjects");
+
+  const INITIAL_COUNT = 3;
+  let expanded = false;
+
+  function showInitialProjects() {
+    projects.forEach((project, index) => {
+      if (index < INITIAL_COUNT) {
+        project.classList.add("visible");
+      } else {
+        project.classList.remove("visible");
+      }
+    });
+  }
+
+  // Initial state
+  showInitialProjects();
+
+  toggleBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    expanded = !expanded;
+
+    if (expanded) {
+      projects.forEach(project => project.classList.add("visible"));
+      toggleBtn.querySelector("span").textContent = "Show Less Projects";
+    } else {
+      showInitialProjects();
+      toggleBtn.querySelector("span").textContent = "View All Projects";
+    }
+  });
+});
+
 
 
 function forceDownload(url, fileName) {
@@ -362,6 +405,28 @@ if (resumeBtn) {
     );
   });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const extras = document.querySelectorAll(".skill-extra");
+  const btn = document.getElementById("toggleSkills");
+  let open = false;
+
+  btn.addEventListener("click", e => {
+    e.preventDefault();
+    open = !open;
+
+    extras.forEach(skill => skill.classList.toggle("show", open));
+
+    btn.querySelector("span").textContent =
+      open ? "Show Less Skills" : "View More Skills";
+
+    if (open) {
+      setTimeout(() => {
+        document.querySelectorAll(".skill-extra .skill-progress")
+          .forEach(bar => bar.style.width = bar.dataset.width + "%");
+      }, 150);
+    }
+  });
+});
 
 // Mobile
 const resumeBtnMobile = document.getElementById("downloadResumeMobile");

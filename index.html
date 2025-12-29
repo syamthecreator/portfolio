@@ -105,22 +105,25 @@
   </header>
 
   <!-- MOBILE NAVIGATION -->
-  <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-content">
-      <div class="mobile-nav-header">
-        <div class="logo">
-          <div class="logo-icon">
-            <i class='bx bxl-flutter'></i>
-          </div>
-          <div class="logo-text">
-            <span class="logo-primary">Syam</span>
-            <span class="logo-accent">Kumar</span>
-          </div>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-content">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <div class="logo-icon">
+          <i class='bx bxl-flutter'></i>
         </div>
-        <button class="close-menu" id="closeMenu">
-          <i class='bx bx-x'></i>
-        </button>
+        <div class="logo-text">
+          <span class="logo-primary">Syam</span>
+          <span class="logo-accent">Kumar</span>
+        </div>
       </div>
+      <button class="close-menu" id="closeMenu">
+        <i class='bx bx-x'></i>
+      </button>
+    </div>
+    
+    <!-- 🔥 Add this wrapper for scrollable content -->
+    <div class="mobile-nav-scrollable">
       <div class="mobile-nav-links">
         <a href="#home" class="mobile-nav-link active" data-link="home">
           <span class="link-number">01</span>
@@ -148,15 +151,17 @@
           <i class='bx bx-chevron-right'></i>
         </a>
       </div>
-      <div class="mobile-nav-footer">
-        <a class="btn-mobile-download" id="downloadResumeMobile">
-          <i class='bx bx-download'></i>
-          Download Resume
-        </a>
-
-      </div>
+    </div>
+    <!-- 🔥 End of scrollable wrapper -->
+    
+    <div class="mobile-nav-footer">
+      <a class="btn-mobile-download" id="downloadResumeMobile">
+        <i class='bx bx-download'></i>
+        Download Resume
+      </a>
     </div>
   </div>
+</div>
 
   <!-- MAIN CONTENT -->
   <main>

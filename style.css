@@ -1622,11 +1622,25 @@ body.light .bx-moon {
   margin: 0 auto;
 }
 
-
 /* ================= RESPONSIVE DESIGN ================= */
 
-/* ---------- TABLET / SMALL LAPTOP ---------- */
+/* ===================================================== */
+/* DESKTOP → SMALL LAPTOP (≤ 1200px) */
+/* ===================================================== */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* ===================================================== */
+/* TABLET / SMALL LAPTOP (≤ 1024px) */
+/* ===================================================== */
 @media (max-width: 1024px) {
+
+  :root {
+    --section-spacing: 100px;
+  }
 
   .hero .container,
   .about-grid,
@@ -1645,6 +1659,11 @@ body.light .bx-moon {
     justify-content: center;
   }
 
+  .hero-visual {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
   .section-title {
     font-size: 2.5rem;
   }
@@ -1656,7 +1675,9 @@ body.light .bx-moon {
   }
 }
 
-/* ---------- HEADER + HAMBURGER FIX ---------- */
+/* ===================================================== */
+/* HEADER + HAMBURGER (≤ 900px) */
+/* ===================================================== */
 @media (max-width: 900px) {
 
   /* Hide desktop nav */
@@ -1667,40 +1688,44 @@ body.light .bx-moon {
   /* Show hamburger */
   .menu-toggle {
     display: flex;
-    flex-shrink: 0;
-    /* 🔥 prevents center shifting */
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Force header actions to RIGHT */
+  /* Keep actions aligned right */
   .header-actions {
     margin-left: auto;
-    display: flex;
-    align-items: center;
     gap: 12px;
-    flex-shrink: 0;
   }
 
-  /* Resume button icon-only */
+  /* Icon-only resume button */
   .btn-download span {
     display: none;
   }
 
   .btn-download {
-    padding: 10px;
     width: 44px;
     height: 44px;
+    padding: 0;
     justify-content: center;
   }
 }
 
-/* ---------- TABLET ---------- */
+/* ===================================================== */
+/* TABLET (≤ 768px) */
+/* ===================================================== */
 @media (max-width: 768px) {
+
+  :root {
+    --section-spacing: 90px;
+  }
+
   .container {
     padding: 0 20px;
   }
 
   section {
-    padding: 80px 0;
+    padding: var(--section-spacing) 0;
   }
 
   .hero-title {
@@ -1715,10 +1740,7 @@ body.light .bx-moon {
     font-size: 2rem;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .projects-grid,
   .skills-grid {
     grid-template-columns: 1fr;
   }
@@ -1732,21 +1754,61 @@ body.light .bx-moon {
     top: -10px;
   }
 
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
   .footer-bottom {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     text-align: center;
   }
 }
 
-/* ---------- MOBILE ---------- */
+/* ===================================================== */
+/* MOBILE (≤ 480px) */
+/* ===================================================== */
 @media (max-width: 480px) {
+
+  /* ---- HEADER ---- */
+  :root {
+    --header-height: 64px;
+    --section-spacing: 64px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .header-content {
+    gap: 12px;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 24px);
+    padding-bottom: 60px;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
 
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
   .hero-actions {
     flex-direction: column;
+    gap: 12px;
   }
 
   .btn-primary,
@@ -1757,20 +1819,53 @@ body.light .bx-moon {
 
   .hero-stats {
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
   }
 
+  /* Hide heavy visual for performance */
+  .hero-visual {
+    display: none;
+  }
+
+  /* ---- ABOUT ---- */
   .feature-card {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
+  /* ---- PROJECTS ---- */
+  .project-content {
+    padding: 20px;
+  }
+
+  /* ---- CONTACT ---- */
   .contact-card,
   .contact-form {
     padding: 24px;
   }
 
+  /* ---- MOBILE NAV ---- */
   .mobile-nav-links {
     padding: 20px 0;
+    gap: 6px;
+  }
+
+  .mobile-nav-link {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+}
+
+/* ===================================================== */
+/* DISABLE HOVER EFFECTS ON TOUCH DEVICES */
+/* ===================================================== */
+@media (hover: none) {
+
+  .feature-card:hover,
+  .project-card:hover,
+  .tech-item:hover {
+    transform: none;
+    box-shadow: none;
   }
 }

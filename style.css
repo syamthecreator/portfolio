@@ -474,7 +474,6 @@ body.light .bx-moon {
   bottom: 50%;
   transform: translateY(50%) rotate(-45deg);
 }
-
 /* ================= MOBILE NAVIGATION ================= */
 .mobile-nav {
   position: fixed;
@@ -507,6 +506,7 @@ body.light .bx-moon {
   justify-content: space-between;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
+  flex-shrink: 0; /* 🔥 Keep header fixed */
 }
 
 .close-menu {
@@ -530,11 +530,13 @@ body.light .bx-moon {
 }
 
 .mobile-nav-links {
-  flex: 1;
-  padding: 40px 0;
+  flex: 0 1 auto; /* 🔥 Changed from flex: 1 */
+  padding: 30px 0 20px 0; /* 🔥 Reduced bottom padding */
   display: flex;
   flex-direction: column;
   gap: 8px;
+  overflow-y: auto; /* 🔥 Allow scrolling only if needed */
+  max-height: 60vh; /* 🔥 Limit height */
 }
 
 .mobile-nav-link {
@@ -577,29 +579,11 @@ body.light .bx-moon {
   transform: translateX(4px);
 }
 
-/* .btn-mobile-download {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 16px 24px;
-  background: var(--gradient);
-  color: white;
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.btn-mobile-download:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-} */
-
 .mobile-nav-footer {
   flex-shrink: 0; /* 🔥 Keep footer at bottom */
   padding-top: 20px;
   border-top: 1px solid var(--border);
+  margin-top: auto; /* 🔥 Push to bottom */
 }
 
 .btn-mobile-download {
@@ -615,7 +599,6 @@ body.light .bx-moon {
   font-weight: 500;
   transition: var(--transition);
   width: 100%;
-  margin-top: auto; /* 🔥 Pushes to bottom */
 }
 
 .btn-mobile-download:hover {
@@ -623,6 +606,25 @@ body.light .bx-moon {
   box-shadow: var(--shadow-md);
 }
 
+/* 🔥 Adjust for smaller screens */
+@media (max-height: 700px) {
+  .mobile-nav-links {
+    max-height: 50vh;
+    padding: 20px 0 15px 0;
+  }
+}
+
+@media (max-height: 600px) {
+  .mobile-nav-links {
+    max-height: 45vh;
+    padding: 15px 0 10px 0;
+    gap: 6px;
+  }
+  
+  .mobile-nav-link {
+    padding: 14px 18px;
+  }
+}
 
 /* ================= HERO SECTION ================= */
 .hero {

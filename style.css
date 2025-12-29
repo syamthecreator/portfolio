@@ -530,11 +530,11 @@ body.light .bx-moon {
 }
 
 .mobile-nav-links {
-  flex: 1;
-  padding: 40px 0;
-   overflow-y: auto;
-  gap: 8px;
+  padding: 24px 0 110px; /* space for fixed footer */
+  overflow-y: auto;
 }
+
+
 
 .mobile-nav-link {
   display: flex;
@@ -578,11 +578,14 @@ body.light .bx-moon {
 
 
 .mobile-nav-footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 24px calc(16px + env(safe-area-inset-bottom));
   background: var(--surface);
-  padding-top: 16px;
   border-top: 1px solid var(--border);
+  z-index: 2100;
 }
 
 
@@ -599,8 +602,6 @@ body.light .bx-moon {
   font-weight: 500;
   transition: var(--transition);
   width: 100%;
-  margin-top: auto;
-  /* 🔥 Pushes to bottom */
 }
 
 .btn-mobile-download:hover {
@@ -1858,11 +1859,6 @@ body.light .bx-moon {
     padding: 24px;
   }
 
-  /* ---- MOBILE NAV ---- */
-  .mobile-nav-links {
-    padding: 20px 0;
-    gap: 6px;
-  }
 
   .mobile-nav-link {
     padding: 14px 16px;

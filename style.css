@@ -194,6 +194,7 @@ body.light .header {
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo-icon {
@@ -213,7 +214,8 @@ body.light .header {
   display: flex !important;
   opacity: 1 !important;
   visibility: visible !important;
-    flex-direction: column;
+    white-space: nowrap;
+  flex-direction: column;
   line-height: 1;
   font-weight: 700;
 }

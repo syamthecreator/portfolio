@@ -3,14 +3,14 @@
    ========================================================================== */
 
 /* ---------- Laptop / small desktop ---------- */
-@media (max-width: 1180px){
+/* @media (max-width: 1180px){
   .container{ padding: 0 24px; }
   .hero__grid{ gap: 32px; }
   .contact{ padding: 44px; gap: 40px; }
-}
+} */
 
 /* ---------- Tablet ---------- */
-@media (max-width: 980px){
+/* @media (max-width: 980px){
   .nav__links{ display: none; }
   .nav__burger{ display: flex; }
   .nav__cta{ display: none; }
@@ -34,10 +34,10 @@
   .projects__grid{ grid-template-columns: repeat(2, 1fr); }
 
   .contact{ grid-template-columns: 1fr; }
-}
+} */
 
 /* ---------- Mobile ---------- */
-@media (max-width: 640px){
+/* @media (max-width: 640px){
   .container{ padding: 0 20px; }
   :root{ --nav-h: 66px; }
 
@@ -70,10 +70,336 @@
   .footer__links{ align-items: center; }
   .footer__social{ justify-content: center; }
   .footer__bottom{ flex-direction: column; gap: 16px; padding: 24px 20px; text-align: center; }
-}
+} */
 
 /* ---------- Small mobile ---------- */
-@media (max-width: 380px){
+/* @media (max-width: 380px){
   .stats__grid{ grid-template-columns: 1fr; }
   .badge{ font-size: 11.5px; padding: 7px 12px; }
+} */
+
+
+/* ==========================================================================
+   responsive.css — breakpoint overrides
+   ========================================================================== */
+
+/* ---------- Global Responsive Fix ---------- */
+html,
+body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+img,
+svg{
+  max-width:100%;
+  height:auto;
+}
+
+.hero__summary,
+.about__text p,
+.project-card__body p,
+.contact__list a,
+.contact__list span{
+  overflow-wrap:break-word;
+  word-break:break-word;
+}
+
+/* ---------- Laptop / Small Desktop ---------- */
+@media (max-width:1180px){
+
+  .container{
+    padding:0 24px;
+  }
+
+  .hero__grid{
+    gap:32px;
+  }
+
+  .contact{
+    padding:44px;
+    gap:40px;
+  }
+
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width:980px){
+
+  .nav__links{
+    display:none;
+  }
+
+  .nav__burger{
+    display:flex;
+  }
+
+  .nav__cta{
+    display:none;
+  }
+
+  .hero{
+    padding-top:calc(var(--nav-h) + 20px);
+    padding-bottom:80px;
+    min-height:auto;
+  }
+
+  .hero__grid{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:36px;
+  }
+
+  .hero__summary{
+    margin-inline:auto;
+    max-width:100%;
+  }
+
+  .hero__cta{
+    justify-content:center;
+  }
+
+  .hero__social{
+    justify-content:center;
+  }
+
+  .hero__visual{
+    order:-1;
+    min-height:320px;
+    margin-bottom:12px;
+  }
+
+  .hero__avatar{
+    width:min(280px,70vw);
+  }
+
+  .orb-ring--1{
+    width:340px;
+    height:340px;
+  }
+
+  .orb-ring--2{
+    width:390px;
+    height:390px;
+  }
+
+  .floating-chip{
+    display:none;
+  }
+
+  .stats__grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .about__grid{
+    grid-template-columns:1fr;
+  }
+
+  .about__panel{
+    order:-1;
+  }
+
+  .projects__grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width:640px){
+
+  :root{
+    --nav-h:66px;
+  }
+
+  .container{
+    padding:0 20px;
+  }
+
+  .section{
+    padding:84px 0;
+  }
+
+  .section__title{
+    margin-bottom:36px;
+  }
+
+  .hero{
+    padding-top:calc(var(--nav-h) + 18px);
+    padding-bottom:60px;
+  }
+
+  .hero__grid{
+    gap:32px;
+  }
+
+  .hero__name{
+    font-size:clamp(34px,10vw,46px);
+  }
+
+  .hero__summary{
+    max-width:100%;
+    font-size:16px;
+  }
+
+  .hero__visual{
+    min-height:260px;
+  }
+
+  .hero__avatar{
+    width:min(250px,80vw);
+  }
+
+  .orb-ring--1{
+    width:280px;
+    height:280px;
+  }
+
+  .orb-ring--2{
+    width:320px;
+    height:320px;
+  }
+
+  .hero__cta{
+    flex-direction:column;
+    width:100%;
+    gap:12px;
+  }
+
+  .hero__cta .btn{
+    width:100%;
+    min-height:48px;
+  }
+
+  .stats__grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+
+  .stat-card{
+    padding:20px 16px;
+  }
+
+  .stat-card__num{
+    font-size:26px;
+  }
+
+  .about__tags{
+    gap:8px;
+  }
+
+  .skills__grid{
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  }
+
+  .timeline{
+    padding-left:22px;
+  }
+
+  .timeline__dot{
+    left:-22px;
+  }
+
+  .timeline__card{
+    padding:18px;
+  }
+
+  .projects__grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-card__thumb{
+    height:170px;
+  }
+
+  .project-card__body{
+    padding:20px;
+  }
+
+  .education-card{
+    flex-direction:column;
+    text-align:center;
+    gap:18px;
+    padding:28px 24px;
+  }
+
+  .education-card__icon{
+    width:50px;
+    height:50px;
+  }
+
+  .contact{
+    padding:24px 20px;
+    gap:28px;
+  }
+
+  .contact__copy{
+    max-width:100%;
+  }
+
+  .contact__list li{
+    align-items:flex-start;
+  }
+
+  .footer__grid{
+    grid-template-columns:1fr;
+    gap:32px;
+    text-align:center;
+  }
+
+  .footer__links{
+    align-items:center;
+  }
+
+  .footer__social{
+    justify-content:center;
+  }
+
+  .footer__bottom{
+    flex-direction:column;
+    gap:16px;
+    padding:24px 20px;
+    text-align:center;
+  }
+
+}
+
+/* ---------- Small Mobile ---------- */
+@media (max-width:380px){
+
+  .container{
+    padding:0 16px;
+  }
+
+  .hero__name{
+    font-size:32px;
+  }
+
+  .hero__avatar{
+    width:min(220px,82vw);
+  }
+
+  .orb-ring--1{
+    width:240px;
+    height:240px;
+  }
+
+  .orb-ring--2{
+    width:270px;
+    height:270px;
+  }
+
+  .stats__grid{
+    grid-template-columns:1fr;
+  }
+
+  .badge{
+    font-size:11.5px;
+    padding:7px 12px;
+  }
+
 }
